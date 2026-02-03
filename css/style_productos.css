@@ -31,6 +31,10 @@ body{
   /* ACÁ VA TU LOGO */
 }
 
+.foto-puesto-section{
+  text-align: center;
+}
+
 /* ==== VIDEO + TEXTO ==== */
 .video-section{
   display:flex;
