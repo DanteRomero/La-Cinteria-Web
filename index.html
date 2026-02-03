@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Home - La Cintería</title>
+    <link rel="stylesheet" href="css/style_productos.css">
+    <link rel="icon" type="image/png" href="image/Dibujo-cinto.png">
+  </head>
+
+<body>
+
+<div class="container">
+
+  <!-- ===== LOGO ===== -->
+  <div class="logo-box">
+    <img src="image/Logo.png" alt="Logo La Cintería">
+  </div>
+
+  <!-- ===== FOTO DEL PUESTO ===== -->
+  <div class="foto-puesto-section">
+    <img src="image/FotoPuesto.png" alt="Puesto de La Cintería">
+  </div>
+
+  <!-- ===== VIDEO + TEXTO ===== -->
+  <div class="video-section">
+
+    <div class="video-box">
+      <video controls>
+        <source src="video/Video-Explicativo-Temp.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="text-box">
+      <h2>Cómo medirte correctamente</h2>
+      <p>
+        Texto explicativo de como medirte: <br>
+        1°: ... <br>
+        2°: ... <br>
+        3°: ... <br>
+        ...
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ===== CATEGORIA DE CINTO (ANCHO) ===== -->
+  <div class="categories-grid">
+
+  <a href="grupo.html?paso=2.5" class="category-card">
+    <img src="image/Cinto-marron-25.jpeg">
+    <div class="category-title">Cintos paso 2.5 cm</div>
+  </a>
+
+  <a href="grupo.html?paso=3" class="category-card">
+    <img src="image/Cinto-marron-30.jpeg">
+    <div class="category-title">Cintos lisos paso 3 cm</div>
+  </a>
+
+  <a href="grupo.html?paso=3.5" class="category-card">
+    <img src="image/Cinto-marron-35.jpeg">
+    <div class="category-title">Cintos lisos paso 3.5 cm</div>
+  </a>
+
+  <a href="grupo.html?paso=4" class="category-card">
+    <img src="image/Cinto-marron-40.jpeg">
+    <div class="category-title">Cintos paso 4 cm</div>
+  </a>
+
+</div>
+
+<script>
+
+fetch("data/productos.json")
+  .then(res => res.json())
+  .then(productos => {
+
+    const contenedor = document.getElementById("productos");
+
+    productos.forEach(p => {
+
+      contenedor.innerHTML += `
+        <div class="product-card">
+          <img src="${p.imagen}">
+          <div class="product-name">${p.nombre}</div>
+          <div class="product-info">
+            Ancho: ${p.paso} <br>
+            Precio: $${p.precio}
+          </div>
+        </div>
+      `;
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>

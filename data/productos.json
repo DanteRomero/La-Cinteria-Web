@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Cinto marrón cocido",
+    "precio": 15000,
+    "paso": "3.0 cm",
+    "imagen": "image/Cinto-marron-30-cocido.jpeg"
+  },
+  {
+    "nombre": "Cinto marrón 25",
+    "precio": 13500,
+    "paso": "x cm",
+    "imagen": "image/Cinto-marron-25.jpeg"
+  },
+  {
+    "nombre": "Cinto marrón 30",
+    "precio": 14000,
+    "paso": "x cm",
+    "imagen": "image/Cinto-marron-30.jpeg"
+  },
+  {
+    "nombre": "Cinto marrón 35 cocido",
+    "precio": 15500,
+    "paso": "x cm",
+    "imagen": "image/Cinto-marron-35-cocido.jpeg"
+  },
+  {
+    "nombre": "Doble Curtiembre",
+    "precio": 45000,
+    "paso": "4,0 cm",
+    "imagen": "image/Cinto-marron-40.jpeg"
+  }
+]
