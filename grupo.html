@@ -1,71 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Grupo de cintos</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>Grupo de cintos</title>
+    <link rel="stylesheet" href="css/style_grupo.css">
+    <link rel="stylesheet" href="css/style_global.css">
+    <link rel="icon" type="image/png" href="image/Dibujo-cinto.png">
+  </head>
 
-<style>
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
+  <body>
+    <header>
+      <div class="logo">La Cintería</div>
+    </header>
 
-.product-card{
-  border:1px solid #ccc;
-  padding:10px;
-  text-align:center;
-}
+    <h2 id="tituloGrupo"></h2>
 
-.product-card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
+    <div id="productos" class="products-grid"></div>
 
-@media(max-width:800px){
-  .products-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-</style>
-</head>
+    <script src="script/script_grupo.js"></script>
 
-<body>
-
-<h2 id="tituloGrupo"></h2>
-
-<div id="productos" class="products-grid"></div>
-
-<script>
-
-const params = new URLSearchParams(window.location.search);
-const pasoSeleccionado = params.get("paso");
-
-fetch("data/productos.json")
-  .then(r => r.json())
-  .then(productos => {
-
-    const filtrados = productos.filter(p => p.paso == pasoSeleccionado);
-
-    document.getElementById("tituloGrupo").innerText =
-      "Cintos paso " + pasoSeleccionado + " cm";
-
-    const cont = document.getElementById("productos");
-
-    filtrados.forEach(p => {
-      cont.innerHTML += `
-        <div class="product-card">
-          <img src="${p.imagen}">
-          <p>${p.nombre}</p>
-          <p>$${p.precio}</p>
-        </div>
-      `;
-    });
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>

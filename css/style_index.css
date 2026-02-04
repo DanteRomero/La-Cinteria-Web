@@ -1,35 +1,3 @@
-/* ==== COLORES (CAMBIÁ LO QUE QUIERAS) ==== */
-:root{
-  --fondo:#ac7c5c;
-  --texto:#000;
-  --borde:#ccc;
-}
-
-/* ==== GENERAL ==== */
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:var(--fondo);
-  color:var(--texto);
-}
-
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:20px;
-}
-
-/* ==== LOGO ==== */
-.logo-box{
-  background-color: #794523;
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.logo-box img{
-  height:80px;
-  /* ACÁ VA TU LOGO */
-}
 
 .foto-puesto-section{
   text-align: center;
@@ -87,41 +55,6 @@ body{
 .category-title{
   margin-top:10px;
   font-weight:bold;
-}
-
-/* Responsive */
-@media(max-width:800px){
-  .categories-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-/* ==== PRODUCTOS ==== */
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.product-card{
-  border:1px solid var(--borde);
-  padding:10px;
-  text-align:center;
-}
-
-.product-card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-
-.product-name{
-  margin:8px 0;
-  font-weight:bold;
-}
-
-.product-info{
-  font-size:14px;
 }
 
 /* ==== RESPONSIVE ==== */

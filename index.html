@@ -1,200 +1,74 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8">
     <title>Home - La Cintería</title>
-    <link rel="stylesheet" href="css/style_productos.css">
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/style_global.css">
     <link rel="icon" type="image/png" href="image/Dibujo-cinto.png">
   </head>
 
-<body>
+  <body>
 
-<div class="container">
+    <!-- ===== LOGO ===== -->
+    <header>
+      <div class="logo">La Cintería</div>
+    </header>
 
-  <!-- ===== LOGO ===== -->
-  <div class="logo-box">
-    <img src="image/Logo.png" alt="Logo La Cintería">
-  </div>
+    <div class="container">
+      <h1>Cintos artesanales de cuero hechos a medida</h1>
 
-  <!-- ===== FOTO DEL PUESTO ===== -->
-  <div class="foto-puesto-section">
-    <img src="image/FotoPuesto.png" alt="Puesto de La Cintería">
-  </div>
+      <!-- ===== FOTO DEL PUESTO ===== -->
+      <div class="foto-puesto-section">
+        <img src="image/FotoPuesto.png" alt="Puesto de La Cintería">
+      </div>
 
-  <!-- ===== VIDEO + TEXTO ===== -->
-  <div class="video-section">
+      <!-- ===== VIDEO + TEXTO ===== -->
+      <div class="video-section">
 
-    <div class="video-box">
-      <video controls>
-        <source src="video/Video-Explicativo-Temp.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <div class="text-box">
-      <h2>Cómo medirte correctamente</h2>
-      <p>
-        Texto explicativo de como medirte: <br>
-        1°: ... <br>
-        2°: ... <br>
-        3°: ... <br>
-        ...
-      </p>
-    </div>
-
-  </div>
-
-  <!-- ===== CATEGORIA DE CINTO (ANCHO) ===== -->
-  <div class="categories-grid">
-
-  <a href="grupo.html?paso=2.5" class="category-card">
-    <img src="image/Cinto-marron-25.jpeg">
-    <div class="category-title">Cintos paso 2.5 cm</div>
-  </a>
-
-  <a href="grupo.html?paso=3" class="category-card">
-    <img src="image/Cinto-marron-30.jpeg">
-    <div class="category-title">Cintos lisos paso 3 cm</div>
-  </a>
-
-  <a href="grupo.html?paso=3.5" class="category-card">
-    <img src="image/Cinto-marron-35.jpeg">
-    <div class="category-title">Cintos lisos paso 3.5 cm</div>
-  </a>
-
-  <a href="grupo.html?paso=4" class="category-card">
-    <img src="image/Cinto-marron-40.jpeg">
-    <div class="category-title">Cintos paso 4 cm</div>
-  </a>
-
-</div>
-
-<script>
-
-fetch("data/productos.json")
-  .then(res => res.json())
-  .then(productos => {
-
-    const contenedor = document.getElementById("productos");
-
-    productos.forEach(p => {
-
-      contenedor.innerHTML += `
-        <div class="product-card">
-          <img src="${p.imagen}">
-          <div class="product-name">${p.nombre}</div>
-          <div class="product-info">
-            Ancho: ${p.paso} <br>
-            Precio: $${p.precio}
-          </div>
+        <div class="video-box">
+          <video controls>
+            <source src="video/Video-Explicativo-Temp.mp4" type="video/mp4">
+          </video>
         </div>
-      `;
 
-    });
-
-  });
-
-</script>
-
-</body>
-=======
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <title>Productos - La Cintería</title>
-    <link rel="stylesheet" href="css/style_productos.css">
-    <link rel="icon" type="image/png" href="image/Dibujo-cinto.png">
-  </head>
-
-<body>
-
-<div class="container">
-
-  <!-- ===== LOGO ===== -->
-  <div class="logo-box">
-    <img src="image/Logo.png" alt="Logo La Cintería">
-  </div>
-
-  <!-- ===== FOTO DEL PUESTO ===== -->
-  <div class="foto-puesto-section">
-    <img src="image/FotoPuesto.png" alt="Puesto de La Cintería">
-  </div>
-
-  <!-- ===== VIDEO + TEXTO ===== -->
-  <div class="video-section">
-
-    <div class="video-box">
-      <video controls>
-        <source src="video/Video-Explicativo-Temp.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <div class="text-box">
-      <h2>Cómo medirte correctamente</h2>
-      <p>
-        Texto explicativo de como medirte: <br>
-        1°: ... <br>
-        2°: ... <br>
-        3°: ... <br>
-        ...
-      </p>
-    </div>
-
-  </div>
-
-  <!-- ===== CATEGORIA DE CINTO (ANCHO) ===== -->
-  <div class="categories-grid">
-
-  <a href="grupo.html?paso=2.5" class="category-card">
-    <img src="image/Cinto-marron-25.jpeg">
-    <div class="category-title">Cintos paso 2.5 cm</div>
-  </a>
-
-  <a href="grupo.html?paso=3" class="category-card">
-    <img src="image/Cinto-marron-30.jpeg">
-    <div class="category-title">Cintos lisos paso 3 cm</div>
-  </a>
-
-  <a href="grupo.html?paso=3.5" class="category-card">
-    <img src="image/Cinto-marron-35.jpeg">
-    <div class="category-title">Cintos lisos paso 3.5 cm</div>
-  </a>
-
-  <a href="grupo.html?paso=4" class="category-card">
-    <img src="image/Cinto-marron-40.jpeg">
-    <div class="category-title">Cintos paso 4 cm</div>
-  </a>
-
-</div>
-
-<script>
-
-fetch("data/productos.json")
-  .then(res => res.json())
-  .then(productos => {
-
-    const contenedor = document.getElementById("productos");
-
-    productos.forEach(p => {
-
-      contenedor.innerHTML += `
-        <div class="product-card">
-          <img src="${p.imagen}">
-          <div class="product-name">${p.nombre}</div>
-          <div class="product-info">
-            Ancho: ${p.paso} <br>
-            Precio: $${p.precio}
-          </div>
+        <div class="text-box">
+          <h2>Cómo medirte correctamente</h2>
+          <p>
+            Texto explicativo de como medirte: <br>
+            1°: Agarras ambos extremos del centímetro <br>
+            2°: Ves en donde se juntan  <br>
+            3°: ... <br>
+            ...
+          </p>
         </div>
-      `;
 
-    });
+      </div>
 
-  });
+      <!-- ===== CATEGORIA DE CINTO (ANCHO) ===== -->
+      <div class="categories-grid">
 
-</script>
+      <a href="grupo.html?paso=2.5" class="category-card">
+        <img src="image/Cinto-marron-25.jpeg" alt="Cinto marrón de 25cm de ancho">
+        <div class="category-title">Cintos paso 2.5 cm</div>
+      </a>
 
-</body>
->>>>>>> 0518a0694eda0d40458ac4f573487997adeea83d
+      <a href="grupo.html?paso=3" class="category-card">
+        <img src="image/Cinto-marron-30.jpeg" alt="Cinto marrón de 30cm de ancho">
+        <div class="category-title">Cintos lisos paso 3 cm</div>
+      </a>
+
+      <a href="grupo.html?paso=3.5" class="category-card">
+        <img src="image/Cinto-marron-35.jpeg" alt="Cinto marrón de 35cm de ancho">
+        <div class="category-title">Cintos lisos paso 3.5 cm</div>
+      </a>
+
+      <a href="grupo.html?paso=4" class="category-card">
+        <img src="image/Cinto-marron-40.jpeg" alt="Cinto marrón de 40cm de ancho">
+        <div class="category-title">Cintos paso 4 cm</div>
+      </a>
+
+    </div>
+
+  </body>
 </html>
