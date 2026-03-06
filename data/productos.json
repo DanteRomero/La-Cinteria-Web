@@ -1,32 +1,85 @@
-[
-  {
-    "nombre": "Cinto marrón cocido",
-    "precio": 15000,
-    "paso": "3.0 cm",
-    "imagen": "image/Cinto-marron-30-cocido.jpeg"
-  },
-  {
-    "nombre": "Cinto marrón 25",
-    "precio": 13500,
-    "paso": "x cm",
-    "imagen": "image/Cinto-marron-25.jpeg"
-  },
-  {
-    "nombre": "Cinto marrón 30",
-    "precio": 14000,
-    "paso": "x cm",
-    "imagen": "image/Cinto-marron-30.jpeg"
-  },
-  {
-    "nombre": "Cinto marrón 35 cocido",
-    "precio": 15500,
-    "paso": "x cm",
-    "imagen": "image/Cinto-marron-35-cocido.jpeg"
-  },
-  {
-    "nombre": "Doble Curtiembre",
-    "precio": 45000,
-    "paso": "4,0 cm",
-    "imagen": "image/Cinto-marron-40.jpeg"
-  }
-]
+{
+  "productos": [
+    {
+      "grupo": "25",
+      "paso": 2.5,
+      "nombre": "Cinto de cuero 2,5cm",
+      "precio": 8500,
+
+      "colores": [
+        {
+          "nombre": "negro",
+          "hex": "#000000"
+        },
+        {
+          "nombre": "marron",
+          "hex": "#6b3e26"
+        },
+        {
+          "nombre":"crudo",
+          "hex":"#624a2e"
+        },
+        {
+          "nombre":"naranja",
+          "hex":"#cc5b1d"
+        },
+        {
+          "nombre":"rojo",
+          "hex":"#892125"
+        },
+        {
+          "nombre":"azul",
+          "hex":"#001855"
+        },
+        {
+          "nombre":"verde",
+          "hex":"#329542"
+        }
+      ],
+
+      "fotos": {
+        "marron": ["image/Cinto-marron-25.jpeg"],
+        "negro": ["image/Cinto-marron-30.jpeg"],
+        "verde":["image/Cinto-marron-35.jpeg"]
+      },
+
+      "hebillas": [
+        "Bronce",
+        "Plateada"
+      ]
+    },
+    {
+      "grupo": "30",
+      "paso": 3,
+      "nombre": "Cinto de cuero 30mm",
+      "precio": 8500,
+
+      "colores": [
+        {
+          "nombre": "marron",
+          "hex": "#6b3e26"
+        },
+        {
+          "nombre": "negro",
+          "hex": "#000000"
+        }
+      ],
+
+      "fotos": {
+        "marron": [
+          "image/Cinto-marron-30.jpeg",
+          "image/Cinto-marron-30-cocido.jpeg"
+        ],
+        "negro": [
+          "image/Cinto-negro-30.jpeg"
+        ]
+      },
+
+      "hebillas": [
+        "Bronce",
+        "Plateada"
+      ]
+    }
+
+  ]
+}
