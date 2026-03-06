@@ -18,7 +18,7 @@ const pasoNum = parseFloat(document.body.dataset.grupo);
 const slides = document.getElementById("slides");
 const dots = document.getElementById("dots");
 // ── Cargar productos ──────────────────────────────
-fetch("../data/productos.json")
+fetch("data/productos.json")
 .then(res => res.json())
 .then(data => {
 
