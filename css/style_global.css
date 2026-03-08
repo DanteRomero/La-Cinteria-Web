@@ -15,7 +15,7 @@ body{
 
 /* ===== HEADER ===== */
 .logo{
-  display:flex ;
+  display:grid ;
   background-color: #794523;
   text-align:center;
   margin-bottom:0px;
