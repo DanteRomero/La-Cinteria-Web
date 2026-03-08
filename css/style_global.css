@@ -22,7 +22,7 @@ body{
   background-color:#794523;
 
   font-family:"Brush Script MT", cursive;
-  font-size:clamp(65px,8vw,90px);
+  font-size:clamp(45px,8vw,90px);
   color:#ccc;
 
   min-height:120px;
