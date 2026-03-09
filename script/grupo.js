@@ -41,7 +41,12 @@ function actualizarUI() {
     // TEXTO PRODUCTO 
     document.getElementById("prodNombre").textContent = productoActivo.nombre;
     document.getElementById("precioProducto").innerHTML = "<strong>Precio:</strong> $" + productoActivo.precio;
-    document.getElementById("prodAncho").textContent = productoActivo.paso + " cm";
+    if (productoActivo.paso == "Especial"){
+        document.getElementById("prodAncho").textContent = productoActivo.paso
+    }
+    else{
+        document.getElementById("prodAncho").textContent = productoActivo.paso + " cm";
+    }
     
 
     // IMAGEN

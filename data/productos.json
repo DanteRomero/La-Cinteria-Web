@@ -311,6 +311,33 @@
         "Bronce",
         "Plateada"
       ]
+    },
+    {
+      "grupo": "100",
+      "paso": "Especial",
+      "nombre": "Cinto de circulos con hebilla ornamental",
+      "precio": 8500,
+
+      "colores": [
+        {
+          "nombre": "negro",
+          "hex": "#000000"
+        },
+        {
+          "nombre": "marron",
+          "hex": "#6b3e26"
+        }
+      ],
+
+      "fotos": {
+        "negro": ["image/Cinto-de-circulos-negro-con-hebilla-ornamental.jpeg"],
+        "marron": ["image/Cinto-de-circulos-marron-con-hebilla-ornamental.jpeg"]
+      },
+
+      "hebillas": [
+        "Bronce",
+        "Plateada"
+      ]
     }
 
   ]
