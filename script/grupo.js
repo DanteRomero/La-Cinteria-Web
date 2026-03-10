@@ -1,17 +1,32 @@
-
+document.addEventListener("DOMContentLoaded", () => {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // ⚠️  REEMPLAZÁ este número con el tuyo real
 // Formato: código país + código área + número (sin +, sin 0, sin 15)
 // Ejemplo Argentina: 5491112345678
-const NUMERO_WHATSAPP = "5491100000000";
+const NUMERO_WHATSAPP = "5492216365027";
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // Estado global
 let productos = [];
 let productoActivo = null;
 let colorSeleccionado = "";
 let fotoIndex = 0;
+
 let talle = "";
+// ── Capturar talle ─────────────────────────────
+document.addEventListener("input", function(e){
+    if(e.target.id === "talle"){
+        talle = e.target.value;
+    }
+});
+
 let hebilla = "";
+// ── Capturar hebilla ───────────────────────────
+document.addEventListener("change", function(e){
+    if(e.target.name === "hebilla"){
+        hebilla = e.target.value;
+    }
+});
+
 // Leer paso desde URL
 const grupo = document.body.dataset.grupo;
 const pasoNum = parseFloat(document.body.dataset.grupo);
@@ -37,6 +52,7 @@ fetch("./data/productos.json")
 // ── Actualizar UI según estado ─────────────────────
 function actualizarUI() {
     const colores = productoActivo.colores;
+    const fotos = productoActivo.fotos[colorSeleccionado];
 
     // TEXTO PRODUCTO 
     document.getElementById("prodNombre").textContent = productoActivo.nombre;
@@ -51,7 +67,7 @@ function actualizarUI() {
 
     // IMAGEN
     slides.innerHTML = `
-    <img src="${productoActivo.fotos[colorSeleccionado][0]}" class="slide active">
+    <img src="${fotos[fotoIndex]}" class="slide active">
     `;
 
     // DOTS (uno por color)
@@ -83,6 +99,7 @@ function cambiarColor(color){
   colorSeleccionado = color;
   actualizarUI();
 }
+window.cambiarColor = cambiarColor;
 // ── Cambiar producto ───────────────────────────────
 function cambiarProducto(grupo) {
     productoActivo = productos.find(p => p.grupo === grupo);
@@ -94,35 +111,30 @@ function cambiarProducto(grupo) {
 // ── Modal ──────────────────────────────────────────
 function abrirModal() {
     // Validar talle y hebilla antes de abrir
-    const errT = document.getElementById("err_talle");
-    const errH = document.getElementById("err_hebilla");
-    let ok = true;
     if (!talle) {
-    if (errT) errT.textContent = "Ingresá tu talle";
-    ok = false;
-    } else {
-    if (errT) errT.textContent = "";
+        alert("Ingresá tu talle antes de comprar");
+        return;
     }
+
     if (!hebilla) {
-    if (errH) errH.textContent = "Seleccioná la hebilla";
-    ok = false;
-    } else {
-    if (errH) errH.textContent = "";
+        alert("Seleccioná una hebilla antes de comprar");
+        return;
     }
-    if (!ok) return;
     // Resumen
     document.getElementById("pedidoResumen").innerHTML = `
     <p><strong>Tu pedido:</strong></p>
-    <p>${productoActivo.nombre} • ${pasoNum} cm • ${colorSeleccionado} • Hebilla ${hebilla} • Talle ${talle} cm</p>
+    <p>${productoActivo.nombre} • ${colorSeleccionado} • Hebilla: ${hebilla} • Su talle: ${talle} cm</p>
     <p class="resumen-precio">$${productoActivo.precio.toLocaleString("es-AR")}</p>
     `;
     document.getElementById("modal").style.display = "flex";
     document.body.style.overflow = "hidden";
 }
+
 document.getElementById("cerrarModal").onclick = () => {
     document.getElementById("modal").style.display = "none";
     document.body.style.overflow = "";
 };
+
 document.getElementById("modal").addEventListener("click", function(e) {
     if (e.target === this) {
     this.style.display = "none";
@@ -130,8 +142,13 @@ document.getElementById("modal").addEventListener("click", function(e) {
     }
 });
 
+// ── Eventos de botones ─────────────────────────
+document.getElementById("btn-comprar")
+.addEventListener("click", abrirModal);
+
 // ── Validar y enviar WhatsApp ──────────────────────
 document.getElementById("btnEnviar").onclick = () => {
+    const foto = document.querySelector(".slide.active")?.src || "";
     const campos = {
     nombre:   document.getElementById("f_nombre").value.trim(),
     dni:      document.getElementById("f_dni").value.trim(),
@@ -164,12 +181,13 @@ document.getElementById("btnEnviar").onclick = () => {
     if (!valido) return;
     const msg = encodeURIComponent(
     `🛍️ *NUEVO PEDIDO - La Cintería*\n\n` +
-    `*Cinto:* ${productoActivo.nombre} paso ${productoActivo.paso} cm\n` +
+    `*Cinto:* ${productoActivo.nombre}` +
     `*Color:* ${colorSeleccionado}\n` +
     `*Precio:* $${productoActivo.precio.toLocaleString("es-AR")}\n` +
     `*Ancho:* ${productoActivo.paso} cm\n` +
     `*Talle:* ${talle} cm\n` +
     `*Hebilla:* ${hebilla}\n\n` +
+    `📷 *Foto del producto:* ${foto}\n\n` +
     `📦 *Datos de envío (Correo Argentino):*\n` +
     `*Nombre:* ${campos.nombre}\n` +
     `*DNI:* ${campos.dni}\n` +
@@ -181,3 +199,4 @@ document.getElementById("btnEnviar").onclick = () => {
     );
     window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${msg}`, "_blank");
 };
+});
