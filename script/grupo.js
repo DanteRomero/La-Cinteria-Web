@@ -181,7 +181,7 @@ document.getElementById("btnEnviar").onclick = () => {
     if (!valido) return;
     const msg = encodeURIComponent(
     `🛍️ *NUEVO PEDIDO - La Cintería*\n\n` +
-    `*Cinto:* ${productoActivo.nombre}` +
+    `*Cinto:* ${productoActivo.nombre}\n` +
     `*Color:* ${colorSeleccionado}\n` +
     `*Precio:* $${productoActivo.precio.toLocaleString("es-AR")}\n` +
     `*Ancho:* ${productoActivo.paso} cm\n` +
