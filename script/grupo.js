@@ -188,7 +188,7 @@ document.getElementById("btnEnviar").onclick = () => {
     `*Talle:* ${talle} cm\n` +
     `*Hebilla:* ${hebilla}\n\n` +
     `📷 *Foto del producto:* ${foto}\n\n` +
-    `📦 *Datos de envío (Correo Argentino):*\n` +
+    `📦 *Datos de envío:*\n` +
     `*Nombre:* ${campos.nombre}\n` +
     `*DNI:* ${campos.dni}\n` +
     `*Teléfono:* ${campos.telefono}\n` +
