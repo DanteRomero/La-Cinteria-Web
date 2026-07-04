@@ -80,10 +80,7 @@ h1::after{
   text-align:center;
   padding:10px;
   transition:transform 0.2s;
-<<<<<<< HEAD
   border-color: black;
-=======
->>>>>>> origin/main
 }
 
 .category-card:hover{

@@ -1,13 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-<<<<<<< HEAD
 const NUMERO_WHATSAPP = "5491157270544";
-=======
-// ⚠️  REEMPLAZÁ este número con el tuyo real
-// Formato: código país + código área + número (sin +, sin 0, sin 15)
-// Ejemplo Argentina: 5491112345678
-const NUMERO_WHATSAPP = "5492216365027";
->>>>>>> origin/main
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // Estado global
 let productos = [];
