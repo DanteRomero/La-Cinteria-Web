@@ -1,8 +1,14 @@
 /* ==== COLORES ==== */
 :root{
+<<<<<<< HEAD
   --fondo:#b6b4b4;
   --texto:#000;
   --borde:#f3f0f0;
+=======
+  --fondo:#ac7c5c;
+  --texto:#000;
+  --borde:#ccc;
+>>>>>>> origin/main
 }
 
 /* ==== GENERAL ==== */
@@ -19,12 +25,20 @@ body{
   justify-content:center;
   align-items:center;
 
+<<<<<<< HEAD
   background-color:#5e361b;
   color:#ccc;
 
   font-family:"Parisienne", cursive;
   font-size:clamp(35px,10vw,50px);
   font-weight: 600;
+=======
+  background-color:#794523;
+  color:#ccc;
+
+  font-family:"Starlight Romance", cursive;
+  font-size:clamp(35px,6vw,90px);
+>>>>>>> origin/main
 
   padding:10px 0;
 }
